@@ -13,7 +13,8 @@ public class SampleService {
 	@Autowired 
 	private SampleMapper sampleMapper;	
 	public List<Sample> getSampleList(){
-		return null;
+		List<Sample> list = sampleMapper.selectSampleList();
+		return list;
 	}
 	public Sample getSampleOne(){
 		return null;

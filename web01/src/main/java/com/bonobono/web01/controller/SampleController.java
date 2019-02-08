@@ -1,5 +1,7 @@
 package com.bonobono.web01.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +34,8 @@ public class SampleController {
 	//3.목록
 	@GetMapping("/sampleList")
 	public String sampleList(Model model) {//정보를 담아 뷰에 넘길때 Model을 사용한다.
+		List<Sample> list = sampleService.getSampleList();
+		model.addAttribute("list",list);
 		return "sampleList";
 		
 	}
