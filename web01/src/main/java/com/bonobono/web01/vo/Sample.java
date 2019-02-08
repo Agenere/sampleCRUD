@@ -1,4 +1,4 @@
-package com.bonobon.web01.vo;
+package com.bonobono.web01.vo;
 
 public class Sample {
 	private int sampleId; //smaple.sample_id

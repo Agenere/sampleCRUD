@@ -1,10 +1,10 @@
-package com.bonobon.web01.vo.mapper;
+package com.bonobono.web01.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.bonobon.web01.vo.Sample;
+import com.bonobono.web01.vo.Sample;
 
 @Mapper
 public interface SampleMapper {

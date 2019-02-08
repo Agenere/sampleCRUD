@@ -1,4 +1,4 @@
-package com.bonobon.web01;
+package com.bonobono.web01;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
