@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bonobono.web01.mapper.SampleMapper">
 	<!-- 모든 정보를 가져온다 -->
 	<select id="selectSampleList" resultType="com.bonobono.web01.vo.Sample">
 		SELECT 
 			sample_id as sampleId,
 			sample_name as sampleName
-		FROM sample
+		FROM 
+			sample
 	</select>
 	<!-- 하나의 정보를 가져온다 -->
 	<select id="selectSampleOne" resultType="com.bonobono.web01.vo.Sample">

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bonobono.web01.service.SampleService;
+import com.bonobono.web01.vo.Sample;
 
 @Controller
 public class SampleController {
@@ -15,12 +16,16 @@ public class SampleController {
 	//1.입력폼
 	@GetMapping("/addSample")
 	public String addSample() {
-		return "addSample"; //view 이름은 templates 폴더의 add 된 같은명의 뷰가 포워드됨
+		return "addSample"; //view 이름은 templates 폴더의 add 된 같은명의 view가 포워드됨
 		
 	}
 	//2.입력 액션
-	@PostMapping
+	@PostMapping("/addSampleAction")
 	public String addSample(@RequestParam(value="sampleName") String sampleName) {
+		Sample sample = new Sample();
+		sample.setSampleName(sampleName);
+		sampleService.addSample(sample);
+		
 		return "redirect:/sampleList";//redirect 가 없으면 forward된다
 		
 	}
