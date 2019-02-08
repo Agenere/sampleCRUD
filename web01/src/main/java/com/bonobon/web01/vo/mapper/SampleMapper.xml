@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.bonobon.web01.vo.mapper.SampleMapper">
+	<!-- 모든 정보를 가져온다 -->
+	<select id="selectSampleList" resultType="com.bonobon.web01.vo.Sample">
+		SELECT 
+			sample_id as sampleId,
+			sample_name as sampleName
+		FROM sample
+	</select>
+	<!-- 하나의 정보를 가져온다 -->
+	<select id="selectSampleOne" resultType="com.bonobon.web01.vo.Sample">
+	
+	</select>
+	<!-- 한개의 정보를 추가한다 -->
+	<insert id ="insertSample" parameterType="com.bonobon.web01.vo.Sample">
+		INSERT INTO sample(
+			sample_name
+		) VALUES (
+			#{sampleName}
+		)
+	</insert>
+	<!-- 한개의 정보를 삭제한다 -->
+	<delete id ="deleteSample" parameterType="com.bonobon.web01.vo.Sample">
+		DELETE FROM
+			sample
+		WHERE
+			sample_id = #{sampleId}		 
+	</delete>
+	
+	<update id = "updateSample" parameterType="com.bonobon.web01.vo.Sample">
+	
+	</update>
+</mapper>
