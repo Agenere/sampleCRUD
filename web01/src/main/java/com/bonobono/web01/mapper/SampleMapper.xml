@@ -9,7 +9,13 @@
 	</select>
 	<!-- 하나의 정보를 가져온다 -->
 	<select id="selectSampleOne" resultType="com.bonobono.web01.vo.Sample">
-	
+		SELECT 
+			sample_id as sampleId,
+			sample_name as sampleName
+		FROM 
+			sample
+		WHERE
+			sample_id = #{sampleId}
 	</select>
 	<!-- 한개의 정보를 추가한다 -->
 	<insert id ="insertSample" parameterType="com.bonobono.web01.vo.Sample">
@@ -26,8 +32,13 @@
 		WHERE
 			sample_id = #{sampleId}		 
 	</delete>
-	
+	<!-- 한개의 정보를 수정한다 -->
 	<update id = "updateSample" parameterType="com.bonobono.web01.vo.Sample">
-	
+		UPDATE
+			sample
+		SET
+			sample_name = #{sampleName}
+		WHERE
+			sample_id = #{sampleId}	
 	</update>
 </mapper>
