@@ -24,9 +24,7 @@ public class SampleController {
 	//2.입력 액션
 	@PostMapping("/addSampleAction")
 	public String addSample(@RequestParam(value="sampleName") String sampleName) {
-		Sample sample = new Sample();
-		sample.setSampleName(sampleName);
-		sampleService.addSample(sample);
+			sampleService.addSample(sampleName);
 		
 		return "redirect:/sampleList";//redirect 가 없으면 forward된다
 		

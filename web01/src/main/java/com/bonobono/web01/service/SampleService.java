@@ -19,9 +19,9 @@ public class SampleService {
 	public Sample getSampleOne(){
 		return null;
 	}	
-	public int addSample(Sample sample){
+	public int addSample(String sampleName){
 		int result = 0;
-		result= sampleMapper.insertSample(sample);
+		result= sampleMapper.insertSample(sampleName);
 		return result;
 	}	
 	public int removeSample(Sample sample){

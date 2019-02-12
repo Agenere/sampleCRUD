@@ -13,7 +13,7 @@ public interface SampleMapper {
 	//한개의 정보를 가져옴
 	Sample selectSampleOne();
 	//한개의 정보를 수가함
-	int insertSample(Sample sample);
+	int insertSample(String sample);
 	//한개의 정보를 삭제함
 	int deleteSample();
 	//한개의 정보를 수정함
