@@ -21,5 +21,5 @@ public interface SampleMapper {
 	int deleteSample(int sampleId);
 	
 	//한개의 정보를 수정함
-	int updateSample();
+	int updateSample(int sampleId, String sampleName);
 }

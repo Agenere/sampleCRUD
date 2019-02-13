@@ -53,5 +53,11 @@ public class SampleController {
 	}
 		
 	//6.수정 액션
+	@PostMapping("/sampleUpdateAction")
+	public String sampleUpdateAction(@RequestParam(value="sampleName") String sampleName,@RequestParam(value="sampleId") int sampleId) {
+		sampleService.modifySample(sampleId,sampleName);		
+		return "redirect:/sampleList";
+		
+	}
 	
 }
