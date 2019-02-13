@@ -12,7 +12,7 @@ public interface SampleMapper {
 	List<Sample> selectSampleList();
 	
 	//한개의 정보를 가져옴
-	Sample selectSampleOne();
+	List<Sample> selectSampleOne(int sampleId);
 	
 	//한개의 정보를 추가함
 	int insertSample(String sampleName);

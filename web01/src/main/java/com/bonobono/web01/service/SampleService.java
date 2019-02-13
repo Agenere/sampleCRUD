@@ -18,8 +18,9 @@ public class SampleService {
 		return list;
 	}
 	//한개의 정보를 가져옴
-	public Sample getSampleOne(){
-		return null;
+	public List<Sample> getSampleOne(int sampleId){
+		List<Sample> listOne = sampleMapper.selectSampleOne(sampleId);
+		return listOne;
 	}
 	//한개의 정보를 추가함
 	public int addSample(String sampleName){
@@ -35,6 +36,8 @@ public class SampleService {
 	}
 	//한개의 정보를 수정함
 	public int modifySample(Sample sample){
+		int result = 0;
+		result= sampleMapper.updateSample();
 		return 0;
 	}
 }

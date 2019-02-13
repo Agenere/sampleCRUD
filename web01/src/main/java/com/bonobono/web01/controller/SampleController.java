@@ -45,8 +45,13 @@ public class SampleController {
 		
 	}
 	//5.수정 폼
-
-	
-	
+	@GetMapping("/sampleUpdate")
+	public String sampleUpdate(Model model,@RequestParam(value="sampleId") int sampleId){
+		List<Sample> listOne = sampleService.getSampleOne(sampleId);
+		model.addAttribute("listOne",listOne);
+		return "sampleUpdate";		
+	}
+		
 	//6.수정 액션
+	
 }
