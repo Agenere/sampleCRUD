@@ -7,12 +7,15 @@
 			<tr>
 				<td>id</td>
 				<td>name</td>
+				<td>수정</td>
+				<td>삭제</td>
 			</tr>
 			<tr th:each="s: ${list}">
 				<td th:text="${s.sampleId}"></td>
 				<td th:text="${s.sampleName}"></td>
-		</table>	
-		
-	
+				<td><a th:href="@{/smapleUpdate(sampleId=${s.sampleId})}" th:text="수정"></a></td>
+				<td><a th:href="@{/smapleDelete(sampleId=${s.sampleId})}" th:text="삭제"></a></td>
+			</tr>
+		</table>		
 	</body>
 </html>

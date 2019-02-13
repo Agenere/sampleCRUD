@@ -24,7 +24,7 @@ public class SampleController {
 	//2.입력 액션
 	@PostMapping("/addSampleAction")
 	public String addSample(@RequestParam(value="sampleName") String sampleName) {
-			sampleService.addSample(sampleName);
+		sampleService.addSample(sampleName);
 		
 		return "redirect:/sampleList";//redirect 가 없으면 forward된다
 		
@@ -34,13 +34,19 @@ public class SampleController {
 	public String sampleList(Model model) {//정보를 담아 뷰에 넘길때 Model을 사용한다.
 		List<Sample> list = sampleService.getSampleList();
 		model.addAttribute("list",list);
-		return "sampleList";
-		
+		return "sampleList";		
 	}
 	
 	//4.삭제 액션
-	
+	@GetMapping("/smapleDelete")
+	public String smapleDelete(@RequestParam(value="sampleId") int sampleId) {
+		sampleService.removeSample(sampleId);
+		return "redirect:/sampleList";
+		
+	}
 	//5.수정 폼
+
+	
 	
 	//6.수정 액션
 }

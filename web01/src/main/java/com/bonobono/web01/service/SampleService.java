@@ -11,22 +11,29 @@ import com.bonobono.web01.vo.Sample;
 @Service
 public class SampleService {
 	@Autowired 
-	private SampleMapper sampleMapper;	
+	private SampleMapper sampleMapper;
+	//모든 정보를 가져올 메서드 추상화
 	public List<Sample> getSampleList(){
 		List<Sample> list = sampleMapper.selectSampleList();
 		return list;
 	}
+	//한개의 정보를 가져옴
 	public Sample getSampleOne(){
 		return null;
-	}	
+	}
+	//한개의 정보를 추가함
 	public int addSample(String sampleName){
 		int result = 0;
 		result= sampleMapper.insertSample(sampleName);
 		return result;
-	}	
-	public int removeSample(Sample sample){
-		return 0;
-	}	
+	}
+	//한개의 정보를 삭제함
+	public int removeSample(int sampleId){
+		int result = 0;
+		result= sampleMapper.deleteSample(sampleId);
+		return result;
+	}
+	//한개의 정보를 수정함
 	public int modifySample(Sample sample){
 		return 0;
 	}
