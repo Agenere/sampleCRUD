@@ -25,7 +25,7 @@ public class SampleController {
 	}
 	//2.입력 액션 // 입력폼에서 입력 받은 값을 DB에 저장하기 위해 실행
 	@PostMapping("/addSampleAction")
-	public String addSample(@RequestParam(value="sampleName") String sampleName) {
+	public String addSample(@RequestParam String sampleName) {
 		sampleService.addSample(sampleName);
 		
 		return "redirect:/sampleList";//redirect 가 없으면 forward된다
@@ -41,14 +41,14 @@ public class SampleController {
 	
 	//4.삭제 액션	// 삭제하려는 데이터의 키값을 가지고 DB에 접속해 해당 데이터를 삭제하기위해 사용
 	@GetMapping("/smapleDelete") 
-	public String smapleDelete(@RequestParam(value="sampleId") int sampleId) {
+	public String smapleDelete(@RequestParam int sampleId) {
 		sampleService.removeSample(sampleId);
 		return "redirect:/sampleList";
 		
 	}
 	//5.수정 폼	 // 먼저 수정 데이터의  키값(PK)을 가지고 DB접속하여 해당 데이터를 불러와 출력해 주기위해 사용
 	@GetMapping("/sampleUpdate")
-	public String sampleUpdate(Model model,@RequestParam(value="sampleId") int sampleId){
+	public String sampleUpdate(Model model,@RequestParam int sampleId){
 		List<Sample> listOne = sampleService.getSampleOne(sampleId);//DB에서 가져온 정보가 담긴 하나의 객체 주소를 list에 담아온다
 		model.addAttribute("listOne",listOne);
 		return "sampleUpdate";		
