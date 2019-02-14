@@ -35,9 +35,9 @@ public class SampleService {
 		return result;
 	}
 	//한개의 정보를 수정함
-	public int modifySample(int sampleId,String sampleName){
+	public int modifySample(Sample sample){
 		int result = 0;
-		result= sampleMapper.updateSample(sampleId,sampleName);
+		result= sampleMapper.updateSample(sample);
 		return result;
 	}
 }
