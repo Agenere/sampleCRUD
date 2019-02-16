@@ -57,7 +57,7 @@ public class SampleController {
 	//6.수정 액션	// 수정 하려하는 데이터값을 받아와 DB에 적용(UPDATE) 시키기위해 사용
 	//@PostMapping("/sampleUpdateAction") 일반적인 post방식으로 호출할때 사용되는 어노테이션
 	//Post방식으로 호출될때 post로 담겨진 값들을 미리 정해진 vo(Sample)에 맞게 셋팅 된 객체로 받을 수있게 된다.
-	@RequestMapping(value="/sampleUpdateAction", method=RequestMethod.POST)
+	@PostMapping(value="/sampleUpdateAction")
 	public String sampleUpdateAction(Sample sample) {
 		sampleService.modifySample(sample);		
 		return "redirect:/sampleList";
